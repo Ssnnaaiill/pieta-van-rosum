@@ -2,15 +2,33 @@
   <div class="home">
     <div class="container">
       <div class="links">
-        <v-btn dark depressed style="transform:rotate(6deg)" elevation="20">
-          <router-link :to="'info'">✨전시회 소개</router-link>
-        </v-btn>
-        <v-btn dark depressed style="transform:rotate(-4deg)" elevation="20">
-          <router-link :to="'schedule'">📅일정 안내</router-link>
-        </v-btn>
-        <v-btn dark depressed style="transform:rotate(4deg)" elevation="20">
-          <router-link :to="'preview'">🎨관람 안내</router-link>
-        </v-btn>
+        <router-link :to="'world'"
+          ><v-btn class="link rotate3" dark depressed elevation="20">
+            ✨전시회 소개
+          </v-btn></router-link
+        >
+        <router-link :to="'schedule'"
+          ><v-btn
+            class="link rotate2"
+            dark
+            depressed
+            elevation="20"
+            style="padding: 0 70px !important;"
+          >
+            📅일정 안내
+          </v-btn></router-link
+        >
+        <router-link :to="'notice'"
+          ><v-btn
+            class="link rotate1"
+            dark
+            depressed
+            elevation="20"
+            style="padding: 0 70px !important;"
+          >
+            🎨통합공지
+          </v-btn></router-link
+        >
       </div>
       <v-card raised elevation="20">
         <div class="wrap">
@@ -21,15 +39,32 @@
         </div>
       </v-card>
       <div class="links">
-        <v-btn dark depressed style="transform:rotate(-6deg)" elevation="20"
-          ><router-link :to="'ticket'">🎫예매하기</router-link></v-btn
+        <router-link :to="'ticket'">
+          <v-btn class="link rotate4" dark depressed elevation="20"
+            >🎫신청 양식</v-btn
+          ></router-link
         >
-        <v-btn dark depressed style="transform:rotate(4deg)" elevation="20"
-          ><router-link :to="'list'">🙋‍♀️관람객 명단</router-link></v-btn
+        <router-link :to="'list'">
+          <v-btn
+            class="link"
+            dark
+            depressed
+            style="transform:rotate(4deg)"
+            elevation="20"
+            >🙋‍♀️관람객 명단
+          </v-btn>
+        </router-link>
+        <v-btn
+          class="link"
+          dark
+          depressed
+          style="transform:rotate(-4deg)"
+          elevation="20"
+          href="http://asked.kr/p1eta1b"
+          target="_blank"
         >
-        <v-btn dark depressed style="transform:rotate(-4deg)" elevation="20"
-          ><router-link :to="'help'">🌹고객센터</router-link></v-btn
-        >
+          🌹고객센터
+        </v-btn>
       </div>
     </div>
   </div>
@@ -60,7 +95,6 @@ export default {
 }
 
 .container {
-  margin-top: 5rem;
   position: relative;
   display: flex;
   justify-content: center;
@@ -71,20 +105,10 @@ export default {
     flex-direction: column;
 
     .v-btn {
-      font: {
-        family: "scoredream";
-        size: 1.2rem;
-      }
-      border-radius: 0px !important;
       margin: 10px -10px;
       height: 60px !important;
       padding: 0 60px !important;
       justify-content: center;
-
-      a {
-        color: white;
-        text-decoration: none;
-      }
     }
   }
 }
