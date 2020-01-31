@@ -4,6 +4,7 @@ import Home from "@/views/Home";
 import World from "@/views/World";
 import Schedule from "@/views/Schedule";
 import Notice from "@/views/Notice";
+import System from "@/views/System";
 
 Vue.use(VueRouter);
 
@@ -27,6 +28,11 @@ const routes = [
     path: "/notice",
     name: "notice",
     component: Notice
+  },
+  {
+    path: "/system",
+    name: "system",
+    component: System
   }
 ];
 

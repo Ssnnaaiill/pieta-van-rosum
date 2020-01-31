@@ -53,7 +53,7 @@ export default {
 @keyframes moveUpDown {
   0%,
   100% {
-    margin-top: 0;
+    margin-top: 0px;
   }
   50% {
     margin-top: 5px;
@@ -83,7 +83,6 @@ export default {
   }
 
   .link {
-    animation: moveUpDown 2s linear infinite;
     font: {
       family: "scoredream";
       size: 1.2rem;
@@ -91,6 +90,7 @@ export default {
     border-radius: 0px !important;
     height: 60px !important;
     padding: 0 60px !important;
+    animation: moveUpDown 2s linear infinite;
 
     &.rotate1 {
       transform: rotate(4deg);
