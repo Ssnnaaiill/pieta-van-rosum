@@ -2,33 +2,41 @@
   <div class="home">
     <div class="container">
       <div class="links">
-        <router-link :to="'world'"
-          ><v-btn class="link rotate3" dark depressed elevation="20">
-            ✨전시회 소개
-          </v-btn></router-link
-        >
-        <router-link :to="'schedule'"
-          ><v-btn
+        <router-link :to="'world'">
+          <v-btn class="link rotate3" dark depressed elevation="20"
+            >✨전시회 소개
+          </v-btn>
+        </router-link>
+        <router-link :to="'schedule'">
+          <v-btn
             class="link rotate2"
             dark
             depressed
             elevation="20"
             style="padding: 0 70px !important;"
-          >
-            📅일정 안내
-          </v-btn></router-link
-        >
-        <router-link :to="'notice'"
-          ><v-btn
+            >📅일정 안내
+          </v-btn>
+        </router-link>
+        <router-link :to="'notice'">
+          <v-btn
             class="link rotate1"
             dark
             depressed
             elevation="20"
             style="padding: 0 70px !important;"
-          >
-            🎨통합공지
-          </v-btn></router-link
-        >
+            >🎨통합공지
+          </v-btn>
+        </router-link>
+        <router-link :to="'system'">
+          <v-btn
+            class="link rotate4"
+            dark
+            depressed
+            elevation="20"
+            style="padding: 0 85px !important;"
+            >🧶시스템
+          </v-btn>
+        </router-link>
       </div>
       <v-card raised elevation="20">
         <div class="wrap">
@@ -39,21 +47,26 @@
         </div>
       </v-card>
       <div class="links">
-        <router-link :to="'ticket'">
-          <v-btn class="link rotate4" dark depressed elevation="20"
-            >🎫신청 양식</v-btn
-          ></router-link
-        >
-        <router-link :to="'list'">
-          <v-btn
-            class="link"
-            dark
-            depressed
-            style="transform:rotate(4deg)"
-            elevation="20"
-            >🙋‍♀️관람객 명단
-          </v-btn>
-        </router-link>
+        <v-btn
+          href="https://docs.google.com/document/d/1-rN0I51k9un405uBCMmHQ-LjxpcLiXUxyIjExpZUsUI/edit?usp=sharing"
+          target="_blank"
+          class="link rotate4"
+          dark
+          depressed
+          elevation="20"
+          >🎫신청서 양식
+        </v-btn>
+        <!-- <router-link :to="'list'"> -->
+        <v-btn
+          class="link"
+          v-on:click="info = true"
+          dark
+          depressed
+          style="transform:rotate(4deg)"
+          elevation="20"
+          >🙋‍♀️관람객 명단
+        </v-btn>
+        <!-- </router-link> -->
         <v-btn
           class="link"
           dark
@@ -62,17 +75,23 @@
           elevation="20"
           href="http://asked.kr/p1eta1b"
           target="_blank"
-        >
-          🌹고객센터
+          >🌹고객센터
         </v-btn>
       </div>
+      <v-snackbar v-model="info" multi-line top>
+        합격자 발표 이후 열람하실 수 있습니다.
+        <v-btn color="pink" icon @click="info = false">
+          <v-icon>mdi-close</v-icon>
+        </v-btn>
+      </v-snackbar>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Home"
+  name: "Home",
+  data: () => ({ info: false })
 };
 </script>
 
@@ -120,5 +139,9 @@ export default {
   background-color: rgba(255, 255, 255, 0) !important;
   background: url("../assets/steve-johnson-YS0YJLU_h2k-unsplash.jpg");
   background-size: 150%;
+}
+
+.v-snack {
+  font-family: "Noto Sans KR";
 }
 </style>
